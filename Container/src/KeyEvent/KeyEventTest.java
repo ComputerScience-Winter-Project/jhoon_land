@@ -12,7 +12,7 @@ public class KeyEventTest  extends JFrame {
 	int y = 150;
 	
 	public KeyEventTest() {
-		setTitle("방향키로 움직이기");
+		setTitle("Key Event Test");
 		setSize(300, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
