@@ -10,7 +10,9 @@ import javax.swing.*;
 public class MoveImage extends JFrame {
 
 	JLabel l1;
+	JLabel l2;
 	ImageIcon img1;
+	ImageIcon background;
 	
 	public MoveImage() {
 		setTitle("Move Images through Mouse Pressing");
@@ -22,7 +24,9 @@ public class MoveImage extends JFrame {
 		pane.setLayout(new FlowLayout());
 		
 		img1 = new ImageIcon("images/SWORD.png");
+		background = new ImageIcon("images/BACK.jpg");
 		l1 = new JLabel(img1);
+		l2 = new JLabel(background);
 		
 		pane.addMouseListener(new MouseAdapter() {	
 			@Override
@@ -35,6 +39,7 @@ public class MoveImage extends JFrame {
 		});
 				
 		pane.add(l1);
+		pane.add(l2);
 		setVisible(true);
 		
 	}
