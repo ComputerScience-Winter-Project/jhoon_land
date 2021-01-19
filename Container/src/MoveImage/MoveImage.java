@@ -13,7 +13,7 @@ public class MoveImage extends JFrame {
 	ImageIcon img1;
 	
 	public MoveImage() {
-		setTitle("이미지 넣기");
+		setTitle("Move Images through Mouse Pressing");
 		setSize(1080, 720);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
