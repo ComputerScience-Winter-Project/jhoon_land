@@ -37,7 +37,7 @@ public class MoveImage extends JFrame {
 				l1.setLocation(x, y);
 			}		
 		});
-				
+		
 		pane.add(l1);
 		pane.add(l2);
 		setVisible(true);
