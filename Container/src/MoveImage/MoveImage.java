@@ -17,6 +17,7 @@ public class MoveImage extends JFrame {
 		setSize(1080, 720);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+		
 		Container pane = getContentPane();
 		pane.setLayout(new FlowLayout());
 		
@@ -34,7 +35,7 @@ public class MoveImage extends JFrame {
 		});
 				
 		pane.add(l1);
-		setVisible(true);	
+		setVisible(true);
 		
 	}
 	
