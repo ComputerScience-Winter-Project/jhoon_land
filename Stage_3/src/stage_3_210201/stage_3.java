@@ -118,7 +118,7 @@ public class stage_3 extends JFrame {
 		
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent e) { // 마우스를 눌렀을 때
+			public void mousePressed(MouseEvent e) { //마우스가 클릭됐을때의 위치 값 불러와서 변수에 넣어줌
 				mouseX = e.getX();
 				mouseY = e.getY();
 			}
@@ -128,7 +128,7 @@ public class stage_3 extends JFrame {
 			public void mouseDragged(MouseEvent e) {
 				int x = e.getXOnScreen();
 				int y = e.getYOnScreen();
-				setLocation(x - mouseX, y - mouseY);	//전체 창 위치 조정
+				setLocation(x - mouseX, y - mouseY);	//마우스가 드래그되면 실시간으로 현재 위치값에서 빼줌
 			}
 		});		
 		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
