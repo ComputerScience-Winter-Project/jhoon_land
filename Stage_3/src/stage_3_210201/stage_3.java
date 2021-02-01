@@ -21,7 +21,7 @@ public class stage_3 extends JFrame {
 	private Image background = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
 	
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));
-	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.png")));
+	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.gif")));
 	private JLabel hobbang = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hobbang.gif")));
 	
 	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
@@ -38,13 +38,13 @@ public class stage_3 extends JFrame {
 	private int mouseX, mouseY;
 
 	public stage_3() {		
-		setTitle("Title"); // 프로그램 이름
-		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT); // 게임 창 크기
-		setResizable(false); // 창 크기 임의적 변경 불가
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//프로그램 종료
-		setLocationRelativeTo(null);	//창 위치 정 가운데에 설정
-		setUndecorated(true);	//기본 메뉴바 출력 안함
-		setVisible(true); // 창 정상적으로 출력
+		setTitle("Title"); 		//타이틀
+		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT); 	//창 크기 설정
+		setResizable(false); 		//창 크기 임의로 변경 불가
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		//프로그램 종료시 디폴트값으로
+		setLocationRelativeTo(null);	//초기 창 위기 정 가운데로 설정
+		setUndecorated(true);			//기본 메뉴바 출력 안함
+		setVisible(true); 				//창 정상적으로 출력
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
 		
@@ -66,7 +66,7 @@ public class stage_3 extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				System.exit(0);
+				System.exit(0);		//exitButton 클릭했을때 프로그램 종료
 			}
 		});
 		add(exitButton);		//메뉴바 우측에 위치한 종료 버튼. hover 시에 파란색으로 바뀜
@@ -90,7 +90,7 @@ public class stage_3 extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				//칼 버튼 이벤트 처리
 				hobbang.setBounds(300, 300, 128, 128);
-				add(hobbang);
+				add(hobbang);		//칼 버튼 클릭했을때, 호빵이 등장
 			}
 		});
 		add(swordButton);		//칼 선택 버튼. hover된 상태도 구현 완료
@@ -114,17 +114,18 @@ public class stage_3 extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				//머니 선택 버튼 이벤트 처리
 				boss.setBounds(900, 300, 128, 128);
-				add(boss);				
+				add(boss);		//머니 버튼 선택했을때, 보오스 등장
 			}
 		});
 		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
+		
 		
 
 		menuBar.setBounds(0, 0, 1280, 30);		//메뉴 바 위치 설정
 		
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent e) { //마우스가 클릭됐을때의 위치 값 불러와서 변수에 넣어줌
+			public void mousePressed(MouseEvent e) { 	//마우스가 클릭됐을때의 위치 값 불러와서 변수에 넣어줌
 				mouseX = e.getX();
 				mouseY = e.getY();
 			}
@@ -140,7 +141,7 @@ public class stage_3 extends JFrame {
 		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
 	}
 
-	   public void paint(Graphics g) {       // 화면을 그려주는 함수. 정적인 것으로 특정 조건에서 바뀌지 않음
+	   public void paint(Graphics g) {       //화면을 그려주는 함수. 정적인 것으로 특정 조건에서 바뀌지 않음
 		      screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);    //화면 크기만큼 이미지 생성
 		      screenGraphic = screenImage.getGraphics();
 		      screenDraw(screenGraphic);          //이미지에 원하는 내용 그려줌
