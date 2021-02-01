@@ -75,6 +75,7 @@ public class stage_3 extends JFrame {
 				setLocation(x - mouseX, y - mouseY);
 			}
 		});
+		
 		add(menuBar);
 
 	}
