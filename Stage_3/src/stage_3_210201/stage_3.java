@@ -19,23 +19,33 @@ public class stage_3 extends JFrame {
 	private Graphics screenGraphic;
 
 	private Image introBackground = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
+	
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));	
-	private ImageIcon exitButtonEnterdImage = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton_hover.png"));
-	private ImageIcon exitButtonBasicImage = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
-	private JButton exitButton = new JButton(exitButtonBasicImage);
+	
+	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
+	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton_hover.png"));
+	private ImageIcon moneyButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/moneyButton.png"));
+	private ImageIcon moneyButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/moneyButton_hover.png"));
+	private ImageIcon swordButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton.png"));
+	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton_hover.png"));
+	
+	private JButton exitButton = new JButton(exitButton_Basic);
+	private JButton moneyButton = new JButton(moneyButton_Basic);
+	private JButton swordButton = new JButton(swordButton_Basic);
 	
 	private int mouseX, mouseY;
 
-	public stage_3() {
-		setUndecorated(true); // 기본 메뉴바 보이지 않음
+	public stage_3() {		
 		setTitle("Title"); // 프로그램 이름
 		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT); // 게임 창 크기
 		setResizable(false); // 창 크기 임의적 변경 불가
-		setLocationRelativeTo(null); // 창이 화면 정중앙에 위치
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 창을 닫으면 프로그램 종료
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//프로그램 종료
+		setLocationRelativeTo(null);	//창 위치 정 가운데에 설정
+		setUndecorated(true);	//기본 메뉴바 출력 안함
 		setVisible(true); // 창 정상적으로 출력
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
+		
 		
 		exitButton.setBounds(1250, 5, 20, 20);
 		exitButton.setBorderPainted(false);
@@ -44,12 +54,12 @@ public class stage_3 extends JFrame {
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				exitButton.setIcon(exitButtonEnterdImage);
+				exitButton.setIcon(exitButton_hover);
 				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				exitButton.setIcon(exitButtonBasicImage);
+				exitButton.setIcon(exitButton_Basic);
 				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 			@Override
@@ -58,6 +68,51 @@ public class stage_3 extends JFrame {
 			}
 		});
 		add(exitButton);
+		
+		moneyButton.setBounds(100, 500, 500, 100);
+		moneyButton.setBorderPainted(false);
+		moneyButton.setContentAreaFilled(false);
+		moneyButton.setFocusPainted(false);
+		moneyButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				moneyButton.setIcon(moneyButton_hover);
+				moneyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				moneyButton.setIcon(moneyButton_Basic);
+				moneyButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//칼 선택 버튼 이벤트 처리
+			}
+		});
+		add(moneyButton);
+		
+		swordButton.setBounds(700, 500, 500, 100);
+		swordButton.setBorderPainted(false);
+		swordButton.setContentAreaFilled(false);
+		swordButton.setFocusPainted(false);
+		swordButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				swordButton.setIcon(swordButton_hover);
+				swordButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				swordButton.setIcon(swordButton_Basic);
+				swordButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//머니 버튼 이벤트 처리
+			}
+		});
+		add(swordButton);
+		
 
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
@@ -74,8 +129,7 @@ public class stage_3 extends JFrame {
 				int y = e.getYOnScreen();
 				setLocation(x - mouseX, y - mouseY);
 			}
-		});
-		
+		});		
 		add(menuBar);
 
 	}
