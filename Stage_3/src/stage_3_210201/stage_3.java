@@ -132,7 +132,6 @@ public class stage_3 extends JFrame {
 			}
 		});		
 		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
-
 	}
 
 	public void paint(Graphics g) { // 화면을 그려주는 함수, 약속된 것으로 바뀌지 않음
