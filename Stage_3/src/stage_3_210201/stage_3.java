@@ -18,9 +18,11 @@ public class stage_3 extends JFrame {
 	private Image screenImage;
 	private Graphics screenGraphic;
 
-	private Image introBackground = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
+	private Image background = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
 	
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));
+	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.png")));
+	private JLabel hobbang = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hobbang.gif")));
 	
 	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
 	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton_hover.png"));
@@ -69,28 +71,6 @@ public class stage_3 extends JFrame {
 		});
 		add(exitButton);		//메뉴바 우측에 위치한 종료 버튼. hover 시에 파란색으로 바뀜
 		
-		moneyButton.setBounds(700, 500, 500, 100);
-		moneyButton.setBorderPainted(false);
-		moneyButton.setContentAreaFilled(false);
-		moneyButton.setFocusPainted(false);
-		moneyButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				moneyButton.setIcon(moneyButton_hover);
-				moneyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				moneyButton.setIcon(moneyButton_Basic);
-				moneyButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-				//칼 선택 버튼 이벤트 처리
-			}
-		});
-		add(moneyButton);		//칼 선택 버튼. hover된 상태도 구현 완료
-		
 		swordButton.setBounds(100, 500, 500, 100);
 		swordButton.setBorderPainted(false);
 		swordButton.setContentAreaFilled(false);
@@ -108,10 +88,36 @@ public class stage_3 extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				//머니 버튼 이벤트 처리
+				//칼 버튼 이벤트 처리
+				hobbang.setBounds(300, 300, 128, 128);
+				add(hobbang);
 			}
 		});
-		add(swordButton);		//머니 선택 버튼. hover된 상태도 구현 완료
+		add(swordButton);		//칼 선택 버튼. hover된 상태도 구현 완료
+		
+		moneyButton.setBounds(700, 500, 500, 100);
+		moneyButton.setBorderPainted(false);
+		moneyButton.setContentAreaFilled(false);
+		moneyButton.setFocusPainted(false);
+		moneyButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				moneyButton.setIcon(moneyButton_hover);
+				moneyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				moneyButton.setIcon(moneyButton_Basic);
+				moneyButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//머니 선택 버튼 이벤트 처리
+				boss.setBounds(900, 300, 128, 128);
+				add(boss);				
+			}
+		});
+		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
 		
 
 		menuBar.setBounds(0, 0, 1280, 30);		//메뉴 바 위치 설정
@@ -134,17 +140,17 @@ public class stage_3 extends JFrame {
 		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
 	}
 
-	public void paint(Graphics g) { // 화면을 그려주는 함수, 약속된 것으로 바뀌지 않음
-		screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT); // 화면 크기만큼 이미지 생성
-		screenGraphic = screenImage.getGraphics();
-		screenDraw(screenGraphic); // 이미지에 원하는 내용을 그려줌
-		g.drawImage(screenImage, 0, 0, null); // screenImage를 (0,0) 위치에 그려줌
-	}
+	   public void paint(Graphics g) {       // 화면을 그려주는 함수. 정적인 것으로 특정 조건에서 바뀌지 않음
+		      screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);    //화면 크기만큼 이미지 생성
+		      screenGraphic = screenImage.getGraphics();
+		      screenDraw(screenGraphic);          //이미지에 원하는 내용 그려줌
+		      g.drawImage(screenImage, 0, 0, null);    //screenImage를 (0,0) 위치에 그려줌
+		   }
 
-	public void screenDraw(Graphics g) {
-		g.drawImage(introBackground, 0, 0, null);
-		paintComponents(g);
-		this.repaint();
-	}
+		   public void screenDraw(Graphics g) {
+		      g.drawImage(background, 0, 0, null);
+		      paintComponents(g);
+		      this.repaint();
+		   }         //배경 이미지 구현
 
-}
+		}
