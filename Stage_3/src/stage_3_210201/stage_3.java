@@ -20,7 +20,7 @@ public class stage_3 extends JFrame {
 
 	private Image introBackground = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
 	
-	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));	
+	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));
 	
 	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
 	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton_hover.png"));
@@ -89,7 +89,7 @@ public class stage_3 extends JFrame {
 				//칼 선택 버튼 이벤트 처리
 			}
 		});
-		add(moneyButton);
+		add(moneyButton);		//칼 선택 버튼. hover된 상태도 구현 완료
 		
 		swordButton.setBounds(100, 500, 500, 100);
 		swordButton.setBorderPainted(false);
@@ -111,10 +111,11 @@ public class stage_3 extends JFrame {
 				//머니 버튼 이벤트 처리
 			}
 		});
-		add(swordButton);
+		add(swordButton);		//머니 선택 버튼. hover된 상태도 구현 완료
 		
 
-		menuBar.setBounds(0, 0, 1280, 30);
+		menuBar.setBounds(0, 0, 1280, 30);		//메뉴 바 위치 설정
+		
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) { // 마우스를 눌렀을 때
@@ -127,10 +128,10 @@ public class stage_3 extends JFrame {
 			public void mouseDragged(MouseEvent e) {
 				int x = e.getXOnScreen();
 				int y = e.getYOnScreen();
-				setLocation(x - mouseX, y - mouseY);
+				setLocation(x - mouseX, y - mouseY);	//전체 창 위치 조정
 			}
 		});		
-		add(menuBar);
+		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
 
 	}
 
