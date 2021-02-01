@@ -67,9 +67,9 @@ public class stage_3 extends JFrame {
 				System.exit(0);
 			}
 		});
-		add(exitButton);
+		add(exitButton);		//메뉴바 우측에 위치한 종료 버튼. hover 시에 파란색으로 바뀜
 		
-		moneyButton.setBounds(100, 500, 500, 100);
+		moneyButton.setBounds(700, 500, 500, 100);
 		moneyButton.setBorderPainted(false);
 		moneyButton.setContentAreaFilled(false);
 		moneyButton.setFocusPainted(false);
@@ -91,7 +91,7 @@ public class stage_3 extends JFrame {
 		});
 		add(moneyButton);
 		
-		swordButton.setBounds(700, 500, 500, 100);
+		swordButton.setBounds(100, 500, 500, 100);
 		swordButton.setBorderPainted(false);
 		swordButton.setContentAreaFilled(false);
 		swordButton.setFocusPainted(false);
