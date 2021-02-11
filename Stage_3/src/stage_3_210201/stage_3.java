@@ -125,7 +125,7 @@ public class stage_3 extends JFrame {
 		});
 		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
 		
-		rightButton.setBounds(1100, 300, 100, 100);
+		rightButton.setBounds(1150, 300, 100, 100);
 		rightButton.setBorderPainted(false);
 		rightButton.setContentAreaFilled(false);
 		rightButton.setFocusPainted(false);
@@ -144,11 +144,13 @@ public class stage_3 extends JFrame {
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 1.jpg")).getImage();
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
+				hobbang.setVisible(false);
+				boss.setVisible(false);
 			}
 		});
 		add(rightButton);
 		
-		leftButton.setBounds(80, 300, 100, 100);
+		leftButton.setBounds(30, 300, 100, 100);
 		leftButton.setBorderPainted(false);
 		leftButton.setContentAreaFilled(false);
 		leftButton.setFocusPainted(false);
@@ -167,6 +169,8 @@ public class stage_3 extends JFrame {
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 2.jpg")).getImage();
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
+				hobbang.setVisible(false);
+				boss.setVisible(false);
 			}
 		});
 		add(leftButton);
