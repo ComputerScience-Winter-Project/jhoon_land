@@ -22,15 +22,16 @@ public class stage_3 extends JFrame {
 	
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("buttons/menuBar.png")));
 	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.gif")));
-	private JLabel hobbang = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hobbang.gif")));
+	private JLabel hbb_merong = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hbb_merong.gif")));
+	private JLabel hbb_sad = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hbb_sad.gif")));
+	private JLabel ssung = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/ssung.png")));
 	
 	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton.png"));	
 	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton_hover.png"));
 	private ImageIcon moneyButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/moneyButton.png"));
 	private ImageIcon moneyButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/moneyButton_hover.png"));
 	private ImageIcon swordButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton.png"));
-	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton_hover.png"));
-	
+	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton_hover.png"));	
 	private ImageIcon rightButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/right.png"));
 	private ImageIcon leftButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/left.png"));
 	private ImageIcon endingButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exit.png"));
@@ -116,8 +117,10 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//칼 버튼 이벤트 처리
-				hobbang.setBounds(300, 300, 128, 128);
-				add(hobbang);		//칼 버튼 클릭했을때, 호빵이 등장
+				hbb_merong.setBounds(300, 300, 128, 128);
+				add(hbb_merong);		//칼 버튼 클릭했을때, 호빵이 등장
+				ssung.setBounds(840, 378, 128, 128);
+				add(ssung);
 				add(endingButton);	//엔딩 버튼 삽입
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/happyending.jpg")).getImage(); //칼 버튼 선택하면 해피엔딩
 				rightButton.setVisible(false);
@@ -146,8 +149,10 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//머니 선택 버튼 이벤트 처리
-				boss.setBounds(576, 100, 128, 128);
+				boss.setBounds(320, 185, 128, 128);
 				add(boss);		//머니 버튼 선택했을때, 보오스 등장
+				hbb_sad.setBounds(840, 378, 128, 128);
+				add(hbb_sad);
 				add(endingButton);	//엔딩 버튼 삽입
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/gameover.png")).getImage(); //머니 버튼 선택하면 게임오버
 				rightButton.setVisible(false);
@@ -177,7 +182,7 @@ public class stage_3 extends JFrame {
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 1.jpg")).getImage();		//배경 교체
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
-				hobbang.setVisible(false);
+				hbb_merong.setVisible(false);
 				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
 				add(endingButton);	//엔딩 버튼 삽입
 			}
@@ -203,7 +208,7 @@ public class stage_3 extends JFrame {
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 2.jpg")).getImage();		//배경 교체
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
-				hobbang.setVisible(false);
+				hbb_merong.setVisible(false);
 				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
 				add(endingButton);	//엔딩 버튼 삽입
 			}
