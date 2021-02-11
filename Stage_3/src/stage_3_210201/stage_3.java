@@ -31,9 +31,14 @@ public class stage_3 extends JFrame {
 	private ImageIcon swordButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton.png"));
 	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton_hover.png"));
 	
+	private ImageIcon rightButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/right.png"));
+	private ImageIcon leftButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/left.png"));
+	
 	private JButton exitButton = new JButton(exitButton_Basic);
 	private JButton moneyButton = new JButton(moneyButton_Basic);
 	private JButton swordButton = new JButton(swordButton_Basic);
+	private JButton rightButton = new JButton(rightButton_Basic);
+	private JButton leftButton = new JButton(leftButton_Basic);
 	
 	private int mouseX, mouseY;
 
@@ -115,9 +120,56 @@ public class stage_3 extends JFrame {
 				//머니 선택 버튼 이벤트 처리
 				boss.setBounds(900, 300, 128, 128);
 				add(boss);		//머니 버튼 선택했을때, 보오스 등장
+				
 			}
 		});
 		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
+		
+		rightButton.setBounds(1100, 300, 100, 100);
+		rightButton.setBorderPainted(false);
+		rightButton.setContentAreaFilled(false);
+		rightButton.setFocusPainted(false);
+		rightButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				rightButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				rightButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//right 버튼 이벤트 처리
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 1.jpg")).getImage();
+				swordButton.setVisible(false);
+				moneyButton.setVisible(false);
+			}
+		});
+		add(rightButton);
+		
+		leftButton.setBounds(80, 300, 100, 100);
+		leftButton.setBorderPainted(false);
+		leftButton.setContentAreaFilled(false);
+		leftButton.setFocusPainted(false);
+		leftButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				leftButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				leftButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//left 버튼 이벤트 처리
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 2.jpg")).getImage();
+				swordButton.setVisible(false);
+				moneyButton.setVisible(false);
+			}
+		});
+		add(leftButton);
 		
 		
 
@@ -139,7 +191,9 @@ public class stage_3 extends JFrame {
 			}
 		});		
 		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
-	}
+		
+		
+	}	
 
 	   public void paint(Graphics g) {       //화면을 그려주는 함수. 정적인 것으로 특정 조건에서 바뀌지 않음
 		      screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);    //화면 크기만큼 이미지 생성

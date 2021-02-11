@@ -35,8 +35,7 @@ public class KeyEventTest  extends JFrame {
 		new KeyEventTest();
 	}
 	
-	class MyKeyListener implements KeyListener {
-		
+	class MyKeyListener implements KeyListener {		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			Container c = (Container) e.getSource();
@@ -75,13 +74,10 @@ public class KeyEventTest  extends JFrame {
 		@Override
 		public void keyReleased(KeyEvent e) {
 			//키를 떼는 순간
-		}
-		
+		}		
 		@Override
 		public void keyTyped(KeyEvent e) {
 			//누른 키를 떼는 순간. Unicode키가 입력된 경우에만
-		}
-		
+		}		
 	}
-
 }
