@@ -33,12 +33,14 @@ public class stage_3 extends JFrame {
 	
 	private ImageIcon rightButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/right.png"));
 	private ImageIcon leftButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/left.png"));
+	private ImageIcon endingButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exit.png"));
 	
 	private JButton exitButton = new JButton(exitButton_Basic);
 	private JButton moneyButton = new JButton(moneyButton_Basic);
 	private JButton swordButton = new JButton(swordButton_Basic);
 	private JButton rightButton = new JButton(rightButton_Basic);
 	private JButton leftButton = new JButton(leftButton_Basic);
+	private JButton endingButton = new JButton(endingButton_Basic);
 	
 	private int mouseX, mouseY;
 
@@ -76,6 +78,26 @@ public class stage_3 extends JFrame {
 		});
 		add(exitButton);		//메뉴바 우측에 위치한 종료 버튼. hover 시에 파란색으로 바뀜
 		
+		endingButton.setBounds(1200, 650, 60, 60);
+		endingButton.setBorderPainted(false);
+		endingButton.setContentAreaFilled(false);
+		endingButton.setFocusPainted(false);
+		endingButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				endingButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.exit(0);		//클릭했을때 프로그램 종료
+			}
+		});
+
+		
 		swordButton.setBounds(100, 500, 500, 100);
 		swordButton.setBorderPainted(false);
 		swordButton.setContentAreaFilled(false);
@@ -96,9 +118,12 @@ public class stage_3 extends JFrame {
 				//칼 버튼 이벤트 처리
 				hobbang.setBounds(300, 300, 128, 128);
 				add(hobbang);		//칼 버튼 클릭했을때, 호빵이 등장
+				add(endingButton);	//엔딩 버튼 삽입
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/happyending.jpg")).getImage(); //칼 버튼 선택하면 해피엔딩
+				rightButton.setVisible(false);
+				leftButton.setVisible(false);
 				swordButton.setVisible(false);
-				moneyButton.setVisible(false);	//버튼 삭제	
+				moneyButton.setVisible(false);	//버튼 삭제
 			}
 		});
 		add(swordButton);		//칼 선택 버튼. hover된 상태도 구현 완료
@@ -123,7 +148,10 @@ public class stage_3 extends JFrame {
 				//머니 선택 버튼 이벤트 처리
 				boss.setBounds(576, 100, 128, 128);
 				add(boss);		//머니 버튼 선택했을때, 보오스 등장
+				add(endingButton);	//엔딩 버튼 삽입
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/gameover.png")).getImage(); //머니 버튼 선택하면 게임오버
+				rightButton.setVisible(false);
+				leftButton.setVisible(false);				
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);	//버튼 삭제				
 			}
@@ -151,6 +179,7 @@ public class stage_3 extends JFrame {
 				moneyButton.setVisible(false);
 				hobbang.setVisible(false);
 				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
+				add(endingButton);	//엔딩 버튼 삽입
 			}
 		});
 		add(rightButton);
@@ -176,10 +205,10 @@ public class stage_3 extends JFrame {
 				moneyButton.setVisible(false);
 				hobbang.setVisible(false);
 				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
+				add(endingButton);	//엔딩 버튼 삽입
 			}
 		});
-		add(leftButton);
-		
+		add(leftButton);	
 		
 
 		menuBar.setBounds(0, 0, 1280, 30);		//메뉴 바 위치 설정
