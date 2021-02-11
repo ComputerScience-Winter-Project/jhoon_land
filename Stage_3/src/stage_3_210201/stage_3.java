@@ -96,6 +96,9 @@ public class stage_3 extends JFrame {
 				//칼 버튼 이벤트 처리
 				hobbang.setBounds(300, 300, 128, 128);
 				add(hobbang);		//칼 버튼 클릭했을때, 호빵이 등장
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/happyending.jpg")).getImage(); //칼 버튼 선택하면 해피엔딩
+				swordButton.setVisible(false);
+				moneyButton.setVisible(false);	//버튼 삭제	
 			}
 		});
 		add(swordButton);		//칼 선택 버튼. hover된 상태도 구현 완료
