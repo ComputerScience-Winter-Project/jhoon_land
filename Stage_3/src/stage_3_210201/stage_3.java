@@ -20,20 +20,20 @@ public class stage_3 extends JFrame {
 
 	private Image background = new ImageIcon(Main.class.getClassLoader().getResource("images/background.jpg")).getImage();	// 이미지를 담는 객체
 	
-	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/menuBar.png")));
+	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("buttons/menuBar.png")));
 	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.gif")));
 	private JLabel hobbang = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/hobbang.gif")));
 	
-	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton.png"));	
-	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/exitButton_hover.png"));
-	private ImageIcon moneyButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/moneyButton.png"));
-	private ImageIcon moneyButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/moneyButton_hover.png"));
-	private ImageIcon swordButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton.png"));
-	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("images/swordButton_hover.png"));
+	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton.png"));	
+	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton_hover.png"));
+	private ImageIcon moneyButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/moneyButton.png"));
+	private ImageIcon moneyButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/moneyButton_hover.png"));
+	private ImageIcon swordButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton.png"));
+	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton_hover.png"));
 	
-	private ImageIcon rightButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/right.png"));
-	private ImageIcon leftButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/left.png"));
-	private ImageIcon endingButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("images/exit.png"));
+	private ImageIcon rightButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/right.png"));
+	private ImageIcon leftButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/left.png"));
+	private ImageIcon endingButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exit.png"));
 	
 	private JButton exitButton = new JButton(exitButton_Basic);
 	private JButton moneyButton = new JButton(moneyButton_Basic);
