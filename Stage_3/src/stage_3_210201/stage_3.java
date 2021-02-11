@@ -118,9 +118,11 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//머니 선택 버튼 이벤트 처리
-				boss.setBounds(900, 300, 128, 128);
+				boss.setBounds(576, 100, 128, 128);
 				add(boss);		//머니 버튼 선택했을때, 보오스 등장
-				
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/gameover.png")).getImage(); //머니 버튼 선택하면 게임오버
+				swordButton.setVisible(false);
+				moneyButton.setVisible(false);	//버튼 삭제				
 			}
 		});
 		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
@@ -141,11 +143,11 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//right 버튼 이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 1.jpg")).getImage();
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 1.jpg")).getImage();		//배경 교체
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
 				hobbang.setVisible(false);
-				boss.setVisible(false);
+				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
 			}
 		});
 		add(rightButton);
@@ -166,11 +168,11 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//left 버튼 이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 2.jpg")).getImage();
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG 2.jpg")).getImage();		//배경 교체
 				swordButton.setVisible(false);
 				moneyButton.setVisible(false);
 				hobbang.setVisible(false);
-				boss.setVisible(false);
+				boss.setVisible(false);		//기존의 버튼과 캐릭터들 삭제
 			}
 		});
 		add(leftButton);
@@ -194,8 +196,7 @@ public class stage_3 extends JFrame {
 				setLocation(x - mouseX, y - mouseY);	//마우스가 드래그되면 실시간으로 현재 위치값에서 빼줌
 			}
 		});		
-		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현
-		
+		add(menuBar);		//메뉴바를 드래그 했을때에 전체 창이 이동되도록 구현	
 		
 	}	
 
