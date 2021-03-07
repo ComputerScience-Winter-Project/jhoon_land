@@ -28,7 +28,7 @@ public class stage_3 extends JFrame {
 	private JLabel buy_off = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/buy off.gif")));
 	private JLabel boss = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss.gif")));
 	private JLabel boss_atack = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/boss_atack.gif")));
-	private JLabel coin = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/coin.png")));
+	private JLabel coin = new JLabel(new ImageIcon(Main.class.getClassLoader().getResource("images/coin.png")));		//캐릭터 삽입
 	
 	private ImageIcon exitButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton.png"));	
 	private ImageIcon exitButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exitButton_hover.png"));
@@ -40,7 +40,7 @@ public class stage_3 extends JFrame {
 	private ImageIcon swordButton_hover = new ImageIcon(Main.class.getClassLoader().getResource("buttons/swordButton_hover.png"));	
 	private JButton swordButton = new JButton(swordButton_Basic);
 	private ImageIcon endingButton_Basic = new ImageIcon(Main.class.getClassLoader().getResource("buttons/exit.png"));
-	private JButton endingButton = new JButton(endingButton_Basic);
+	private JButton endingButton = new JButton(endingButton_Basic);						//기본 동작 버튼 삽입
 	
 	private ImageIcon next_1 = new ImageIcon(Main.class.getClassLoader().getResource("buttons/right.png"));
 	private JButton next1 = new JButton(next_1);
@@ -61,7 +61,7 @@ public class stage_3 extends JFrame {
 	private ImageIcon next_9 = new ImageIcon(Main.class.getClassLoader().getResource("buttons/right.png"));
 	private JButton next9 = new JButton(next_9);
 	private ImageIcon next_10 = new ImageIcon(Main.class.getClassLoader().getResource("buttons/right.png"));
-	private JButton next10 = new JButton(next_10);
+	private JButton next10 = new JButton(next_10);														//진행 버튼 삽입
 	
 	private int mouseX, mouseY;
 
@@ -88,9 +88,7 @@ public class stage_3 extends JFrame {
 		next7.setVisible(false);
 		next8.setVisible(false);
 		next9.setVisible(false);
-		next10.setVisible(false);
-		
-		
+		next10.setVisible(false);	//버튼 일시적으로 보이지 않게		
 		
 		exitButton.setBounds(1250, 5, 20, 20);
 		exitButton.setBorderPainted(false);
@@ -121,7 +119,7 @@ public class stage_3 extends JFrame {
 		endingButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				endingButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -176,9 +174,9 @@ public class stage_3 extends JFrame {
 				//머니 선택 버튼 이벤트 처리
 				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG forest 1.png")).getImage();
 				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				moneyButton.setVisible(false);		//배경 처리
 				coin.setBounds(210, 310, 32, 32);
-				add(coin);
+				add(coin);			//호빵이에게 동전 부여
 				next1.setVisible(true);
 				next2.setVisible(false);
 				next3.setVisible(false);
@@ -188,7 +186,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(moneyButton);		//머니 선택 버튼. hover된 상태도 구현 완료
@@ -209,11 +207,9 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 1.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);				
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 1.png")).getImage();		//배경 처리
 				guard.setBounds(900, 300, 128, 128);
-				add(guard);
+				add(guard);			//경비 등장
 				next2.setVisible(true);
 				next1.setVisible(false);
 				next3.setVisible(false);
@@ -223,7 +219,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next1);
@@ -244,11 +240,7 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 2.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);				
-				guard.setBounds(900, 300, 128, 128);
-				add(guard);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 2.png")).getImage();		//배경 처리
 				next3.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -258,7 +250,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next2);
@@ -279,14 +271,12 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate.jpg")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate.jpg")).getImage();		//배경 처리
 				hbb_merong.setVisible((false));
 				coin.setVisible((false));
-				guard.setVisible((false));
+				guard.setVisible((false));		//객체 일시적 삭제
 				buy_off.setBounds(500, 450, 256, 128);
-				add(buy_off);
+				add(buy_off);		//매수하는 장면 삽입
 				next4.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -296,7 +286,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next3);
@@ -317,13 +307,11 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 3.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);	
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 3.png")).getImage();		//배경 처리
 				buy_off.setVisible(false);
 				hbb_merong.setVisible(true);
 				guard.setVisible((true));
-				coin.setVisible(true);
+				coin.setVisible(true);		//캐릭터 재등장
 				next5.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -333,7 +321,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next4);
@@ -354,9 +342,7 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 4.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG gate 4.png")).getImage();		//배경 처리
 				next6.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -366,7 +352,7 @@ public class stage_3 extends JFrame {
 				next7.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next5);
@@ -387,12 +373,10 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 1.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
-				guard.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 1.png")).getImage();		//배경 처리
+				guard.setVisible(false);		//경비 퇴장
 				boss.setBounds(900, 300, 128, 128);
-				add(boss);
+				add(boss);		//보오스 등장
 				next7.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -402,7 +386,7 @@ public class stage_3 extends JFrame {
 				next6.setVisible(false);
 				next8.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next6);
@@ -423,12 +407,10 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 2.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 2.png")).getImage();		//배경 처리
 				boss.setVisible(false);
 				boss_atack.setBounds(900, 300, 256, 128);
-				add(boss_atack);
+				add(boss_atack);		//보오스 공격 모션
 				next8.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -438,7 +420,7 @@ public class stage_3 extends JFrame {
 				next6.setVisible(false);
 				next7.setVisible(false);
 				next9.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next7);
@@ -459,12 +441,10 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 3.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 3.png")).getImage();		//배경 처리
 				hbb_merong.setVisible(false);
 				hbb_sad.setBounds(200, 300, 128, 128);
-				add(hbb_sad);
+				add(hbb_sad);		//호빵이 표정 변화
 				next9.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -474,7 +454,7 @@ public class stage_3 extends JFrame {
 				next6.setVisible(false);
 				next7.setVisible(false);
 				next8.setVisible(false);
-				next10.setVisible(false);
+				next10.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next8);
@@ -495,13 +475,11 @@ public class stage_3 extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//이벤트 처리
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 4.png")).getImage();
-				swordButton.setVisible((false));
-				moneyButton.setVisible(false);
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/BG final 4.png")).getImage();		//배경 처리
 				hbb_sad.setVisible(false);
-				coin.setVisible(false);
+				coin.setVisible(false);		//돈 객체 삭제
 				hbb_dead.setBounds(200, 300, 128, 128);
-				add(hbb_dead);
+				add(hbb_dead);		//호빵이 사망
 				next10.setVisible(true);
 				next1.setVisible(false);
 				next2.setVisible(false);
@@ -511,7 +489,7 @@ public class stage_3 extends JFrame {
 				next6.setVisible(false);
 				next7.setVisible(false);
 				next8.setVisible(false);
-				next9.setVisible(false);
+				next9.setVisible(false);		//버튼 처리
 			}
 		});
 		add(next9);
@@ -532,12 +510,11 @@ public class stage_3 extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				background = new ImageIcon(Main.class.getClassLoader().getResource("images/gameover.png")).getImage(); //머니 버튼 선택하면 게임오버		
-				swordButton.setVisible(false);
-				moneyButton.setVisible(false);	//버튼 삭제
+				background = new ImageIcon(Main.class.getClassLoader().getResource("images/gameover.png")).getImage(); 	//게임오버 배경 처리
 				boss_atack.setVisible(false);
-				hbb_dead.setVisible(false);
-				add(endingButton);	//엔딩 버튼 삽입
+				hbb_dead.setVisible(false);		//캐릭터 전부 퇴장
+				next10.setVisible(false);		//진행 버튼 삭제
+				add(endingButton);				//엔딩 버튼 삽입
 			}
 		});
 		add(next10);	
